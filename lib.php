@@ -72,4 +72,21 @@ class enrol_bkash_plugin extends enrol_plugin {
         return true;
     }
 
+    /**
+     * Return an array of valid options for the roleid.
+     *
+     * @param stdClass $instance
+     * @param context $context
+     * @return array
+     */
+    protected function get_roleid_options(stdClass $instance, context $context): array
+    {
+        if ($instance->id) {
+            $roles = get_default_enrol_roles($context, $instance->roleid);
+        } else {
+            $roles = get_default_enrol_roles($context, $this->get_config('roleid'));
+        }
+        return $roles;
+    }
+
 }
