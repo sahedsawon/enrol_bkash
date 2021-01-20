@@ -1,0 +1,7 @@
+.idea
+/src/App
+/vendor
+.DS_Store
+.php_cs.cache
+composer.lock
+index.php
